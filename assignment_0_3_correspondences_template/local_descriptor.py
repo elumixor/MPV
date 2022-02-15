@@ -93,20 +93,20 @@ def calc_sift_descriptor(input: torch.Tensor,
                   num_ang_bins: int = 8,
                   num_spatial_bins: int = 4,
                   clipval: float = 0.2) -> torch.Tensor:
-    '''    
+    """
     Args:
         x: torch.Tensor (B, 1, PS, PS)
         num_ang_bins: (int) Number of angular bins. (8 is default)
         num_spatial_bins: (int) Number of spatial bins (4 is default)
         clipval: (float) default 0.2
-        
+
     Returns:
         Tensor: SIFT descriptor of the patches
 
     Shape:
         - Input: (B, 1, PS, PS)
         - Output: (B, num_ang_bins * num_spatial_bins ** 2)
-    '''
+    """
     out = torch.zeros(input.size(0), num_ang_bins * num_spatial_bins ** 2)
     return out
 
